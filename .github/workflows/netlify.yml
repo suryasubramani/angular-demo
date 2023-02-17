@@ -11,11 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.2
+        uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: "./dist"
+          publish-dir: "dist/angular-demo"
           production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
