@@ -1,7 +1,8 @@
 # .github/workflows/netlify.yml
 name: Build and Deploy to Netlify
 on:
-  push: main
+  push:
+  branches: -"main"
 
 jobs:
   build:
@@ -13,6 +14,7 @@ jobs:
         with:
           publish-dir: "./dist/angular-demo"
           production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: false
           enable-commit-comment: true
