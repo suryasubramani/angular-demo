@@ -11,9 +11,13 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let workspace of Workspaces">
-      <th scope="row">{{ workspace.id }}</th>
+  <tbody *ngIf="workspaces">
+    <tr *ngFor="let workspace of workspaces">
+      <td scope="row">
+        <a routerLink="{{ workspace.id }}/projects">
+          {{ workspace.id }}
+        </a>
+      </td>
       <td>{{ workspace.name }}</td>
       <td>{{ workspace.owner.id }}</td>
       <td>{{ workspace.owner.email }}</td>

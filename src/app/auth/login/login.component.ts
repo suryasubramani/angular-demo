@@ -47,5 +47,7 @@ export class LoginComponent implements OnInit {
     };
     console.log(user);
     localStorage.setItem('LOGGEDIN USER', JSON.stringify(user));
+    alert('Logged In Successfully');
+    window.location.href = 'accounts/' + user.accountId + '/workspaces';
   }
 }

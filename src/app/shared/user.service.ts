@@ -18,9 +18,9 @@ export class UserService {
           ),
       }),
     };
-    this.http.get<any>(apiURL, httpOptions).subscribe((data) => {
-      console.log(data);
-    });
+    // this.http.get<any>(apiURL, httpOptions).subscribe((data) => {
+    //   console.log(data);
+    // });
     let response = {
       api_version: 4,
       error: null,

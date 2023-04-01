@@ -9,12 +9,17 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngIf="projects">
     <tr *ngFor="let project of projects">
       <th scope="row">{{ project.id }}</th>
       <td>{{ project.name }}</td>
       <td>{{ project.workspaceId }}</td>
       <td>{{ project.testsCount }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="gotoTestPage(project.id)">
+          View Test
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

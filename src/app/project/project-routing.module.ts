@@ -6,15 +6,23 @@ import { WorkspaceListComponent } from './workspace-list/workspace-list.componen
 
 const routes: Routes = [
   {
-    path: 'projectList',
+    path: 'projects',
     component: ProjectListComponent,
   },
   {
-    path: 'testList',
+    path: 'accounts/:accountId/workspaces/:workspaceId/projects',
+    component: ProjectListComponent,
+  },
+  {
+    path: 'accounts/:accountId/workspaces/:workspaceId/projects/:projectId/tests',
     component: TestListComponent,
   },
   {
     path: 'workspaceList',
+    component: WorkspaceListComponent,
+  },
+  {
+    path: 'accounts/:accountId/workspaces',
     component: WorkspaceListComponent,
   },
 ];
