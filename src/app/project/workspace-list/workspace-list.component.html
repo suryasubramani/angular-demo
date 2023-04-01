@@ -1,0 +1,24 @@
+<h1>Workspace List</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#Id</th>
+      <th scope="col">Test Name</th>
+      <th scope="col">Owner ID</th>
+      <th scope="col">Owner Email</th>
+      <th scope="col">Owner Name</th>
+      <th scope="col">Account ID</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let workspace of Workspaces">
+      <th scope="row">{{ workspace.id }}</th>
+      <td>{{ workspace.name }}</td>
+      <td>{{ workspace.owner.id }}</td>
+      <td>{{ workspace.owner.email }}</td>
+      <td>{{ workspace.owner.displayName }}</td>
+      <td>{{ workspace.accountId }}</td>
+    </tr>
+  </tbody>
+</table>
