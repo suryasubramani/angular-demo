@@ -6,16 +6,12 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { TestListComponent } from './test-list/test-list.component';
 import { WorkspaceListComponent } from './workspace-list/workspace-list.component';
 
-
 @NgModule({
   declarations: [
     ProjectListComponent,
     TestListComponent,
-    WorkspaceListComponent
+    WorkspaceListComponent,
   ],
-  imports: [
-    CommonModule,
-    ProjectRoutingModule
-  ]
+  imports: [CommonModule, ProjectRoutingModule],
 })
-export class ProjectModule { }
+export class ProjectModule {}
