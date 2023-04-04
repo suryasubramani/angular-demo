@@ -34,20 +34,21 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.loginForm.value);
-    let response = this.userService.getuserDetails();
-    let user = {
-      email: response.result.email,
-      firstName: response.result.firstName,
-      lastName: response.result.lastName,
-      userId: response.result.id,
-      roles: response.result.roles,
-      accountId: response.result.defaultProject.accountId,
-      workspaceId: response.result.defaultProject.workspaceId,
-      projectId: response.result.defaultProjectId,
-    };
-    console.log(user);
-    localStorage.setItem('LOGGEDIN USER', JSON.stringify(user));
-    alert('Logged In Successfully');
-    window.location.href = 'accounts/' + user.accountId + '/workspaces';
+    this.userService.getuserDetails().subscribe((response) => {
+      let user = {
+        email: response.result.email,
+        firstName: response.result.firstName,
+        lastName: response.result.lastName,
+        userId: response.result.id,
+        roles: response.result.roles,
+        accountId: response.result.defaultProject.accountId,
+        workspaceId: response.result.defaultProject.workspaceId,
+        projectId: response.result.defaultProjectId,
+      };
+      console.log(user);
+      localStorage.setItem('LOGGEDIN USER', JSON.stringify(user));
+      alert('Logged In Successfully');
+      window.location.href = 'accounts/' + user.accountId + '/workspaces';
+    });
   }
 }
